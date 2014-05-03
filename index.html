@@ -1,10 +1,21 @@
+---
+---
 <!DOCTYPE html>
 <html>
 <head>
-<title>It Worked!</title>
+<title>Mitchell Lee - The Evil Dev</title>
 </head>
 <body>
-<h1>Hello World</h1>
+<h1>This is my blog. It's new.</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.content }}
+    </li>
+  {% endfor %}
+</ul>
 </body>
 </html>
 
