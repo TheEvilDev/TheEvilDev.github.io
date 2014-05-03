@@ -3,19 +3,226 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Mitchell Lee - The Evil Dev</title>
+    <meta charset="utf-8">
+    <title>Mitchell Lee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About me, my works, and my thoughts">
+    <meta name="author" content="Mitchell Lee">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/component.css" rel="stylesheet">
+
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<script type="text/javascript" src="js/modernizr.custom.js"></script>
+    
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57-precomposed.png">
 </head>
 <body>
-<h1>This is my blog. It's new.</h1>
+<div class="container">
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.content }}
-    </li>
-  {% endfor %}
-</ul>
+			<div id="bl-main" class="bl-main">
+			
+			<!--=========== ABOUT SECTION ===========-->
+				<section>
+					<div class="bl-box">
+						<h2 >Hi My Name is Mitchell</h2> <!-- class="bl-icon bl-icon-about" -->
+					</div><!-- /bl-box -->
+					<div class="bl-content">
+						<div class="row-fluid">
+							<div class="span12">
+							</div><!-- /span12 -->
+						</div><!-- /row-fluid -->
+						
+					</div><!-- /bl-content -->
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				
+				
+				
+			<!--=========== PORTFOLIO SECTION ===========-->
+				<section id="bl-work-section">
+					<div class="bl-box">
+						<h2 >Latests Works</h2> <!-- class="bl-icon bl-icon-works"-->
+					</div>
+					<div class="bl-content">
+						<h2>Some Recent Projects - NOTE: These are fake, real ones will be added soon!</h2>
+						<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+						<p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+						<p></p>
+						<p></p>
+						<div class="row-fluid">
+							<div class="span4">
+								<ul id="bl-work-items" style="list-style: none;">
+									<li data-panel="panel-1"><a href="#"><img src="images/project1.jpg" /></a></li>
+								</ul>
+								<p>Project Number 1</p>							
+							</div><!-- /span4 -->
+							<div class="span4">
+								<ul id="bl-work-items">
+									<li data-panel="panel-2"><a href="#"><img src="images/project2.jpg" /></a></li>
+								</ul>
+								<p>Project Number 2</p>							
+							</div><!-- /span4 -->
+							<div class="span4">
+								<ul id="bl-work-items">
+									<li data-panel="panel-3"><a href="#"><img src="images/project3.jpg" /></a></li>
+								</ul>
+								<p>Project Number 3</p>							
+							</div><!-- /span4 -->
+
+						</div><!-- /row-fluid -->
+					</div><!-- /bl-content -->
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				
+				
+				
+			<!--=========== BLOG SECTION ===========-->
+				<section>
+					<div class="bl-box">
+						<h2>My deepest thoughts</h2>
+					</div>
+					<div class="bl-content">
+						<div class="row-fluid">
+							<div class="span12">
+								<h2>Blog Posts</h2>
+								{% for post in site.posts %}
+									<article>
+										<h3>{{ post.title }}</h3>
+										{{ post.content }}
+									</article>
+									<hr>
+								  {% endfor %}
+							</div><!-- /span12 -->
+						</div><!-- /row-fluid -->
+					</div><!-- /bl-content -->
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				
+				
+				
+			<!--=========== CONTACT SECTION ===========-->
+				<section>
+					<div class="bl-box">
+						<h2 >Contact Me</h2>
+					</div>
+					<div class="bl-content">
+						<div class="row-fluid">
+							<div class="span12">
+								<h2>Get in touch</h2>
+								<br>
+								<p>I am available for freelance jobs, presentations, and technical debates. (No spam please).
+								Please contact me and send me your questions and inquiries.</p>								
+							
+							<p>
+								<p>mitch@evildev.net | Winnipeg, Canada</p>
+							</p>
+							
+							<p>
+								<a href="#" class="social-network facebook"></a>
+								<a href="#" class="social-network pinterest"></a>
+								<a href="#" class="social-network flickr"></a>
+								<a href="#" class="social-network dribbble"></a>
+								<a href="#" class="social-network twitter"></a>
+								<a href="#" class="social-network apple"></a>
+								<a href="#" class="social-network skype"></a>
+								<a href="#" class="social-network tumblr"></a>
+								<a href="#" class="social-network vimeo"></a>
+							</p>
+							
+						</div>
+					</div>
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				
+				
+				
+				
+			<!--=========== PROJECTS DESCRIPTIONS SECTION ===========-->
+				<div class="bl-panel-items" id="bl-panel-work-items">
+
+					<div data-panel="panel-1">
+						<div class="row-fluid">
+							<div class="span8 offset2 tweak">
+								<img src="images/project1.jpg" />
+								<br>
+								<br>
+								<h4>Project Overview</h4>
+								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+								<h4>Project Details</h4>
+								<p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							</div><!-- /span8 -->
+						</div><!-- /row-fluid -->	
+					</div><!-- /panel1 -->
+					
+					<div data-panel="panel-2">
+						<div class="row-fluid">
+							<div class="span8 offset2 tweak">
+							<img src="images/project2.jpg" />
+							<br>
+							<br>
+							<h4>Project Overview</h4>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+							<h4>Project Details</h4>
+							<p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							</div><!-- /span8 -->
+						</div><!-- /row-fluid -->	
+					</div><!-- /panel2 -->
+					
+					<div data-panel="panel-3">
+						<div class="row-fluid">
+							<div class="span8 offset2 tweak">
+							<img src="images/project3.jpg" />
+							<br>
+							<br>
+							<h4>Project Overview</h4>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+							<h4>Project Details</h4>
+							<p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							</div><!-- /span8 -->
+						</div><!-- /row-fluid -->	
+					</div><!-- /panel3 -->
+					
+					<nav>
+						<span class="bl-next-work">&gt; Next Project</span>
+						<span class="bl-icon bl-icon-close"></span>
+					</nav>
+				</div><!-- /panel-items -->
+				
+				
+			</div><!-- /bl-main -->
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/boxlayout.js"></script>
+		<script>
+			$(function() {
+				Boxlayout.init();
+			});
+		</script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>
 
