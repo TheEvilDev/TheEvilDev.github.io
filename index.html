@@ -43,6 +43,8 @@
 					<div class="bl-content">
 						<div class="row-fluid">
 							<div class="span12">
+							{% capture aboutme %}{% include aboutme.md %}{% endcapture %}
+							{{ aboutme | markdownify }}
 							</div><!-- /span12 -->
 						</div><!-- /row-fluid -->
 						
@@ -93,7 +95,7 @@
 			<!--=========== BLOG SECTION ===========-->
 				<section>
 					<div class="bl-box">
-						<h2>This is what goes on in my head (careful, not for the feight of heart!)</h2>
+						<h2>This is what goes on in my head</h2>
 					</div>
 					<div class="bl-content">
 						<div class="row-fluid">
