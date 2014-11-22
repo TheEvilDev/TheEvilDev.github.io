@@ -36,7 +36,6 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: ['<%= concat.css.dest %>'],
-          dest: '<%= pkg.name %>',
           ext: '.min.css'
         }]
       }
