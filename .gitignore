@@ -4,3 +4,4 @@ _site/
 node_modules/
 *.log
 coverage/
+.sass-cache/
