@@ -5,12 +5,23 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
-      options: {
-        separator: ';'
-      },
+        options: {
+          separator: ';'
+        },
+        dist: {
+          src: ['src/js/**/*.js'],
+          dest: 'dist/js/<%= pkg.name %>.js'
+        }
+    },
+    cssmin: {
       dist: {
-        src: ['js/**/*.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        files: [{
+          expand: true,
+          cwd: 'src/css/',
+          src: ['*.css', '!*.min.css'],
+          dest: 'dist/css/',
+          ext: '.min.css'
+        }]
       }
     },
     uglify: {
@@ -19,7 +30,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+          'dist/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
         }
       }
     },
@@ -74,7 +85,7 @@ module.exports = function(grunt) {
 
   // grunt watch to apply changes as they happen and test them
   grunt.registerTask('test', ['jshint','concat','uglify','karma:unit']);
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify','cssmin']);
   grunt.registerTask('run', ['default','jekyll']);
 
 };

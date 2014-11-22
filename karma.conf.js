@@ -21,7 +21,7 @@ module.exports = function(config) {
       'bower_components/bootstrap/dist/js/bootstrap.min.js',
       'bower_components/angular-route/angular-route.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'dist/TheEvilDev.github.io.min.js',
+      'dist/js/TheEvilDev.github.io.min.js',
       'tests/**/*.js'
     ],
 
@@ -34,13 +34,18 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'dist/js/TheEvilDev.github.io.min.js': ['coverage']
     },
 
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress','growl'],
+    reporters: ['progress','coverage','growl'],
 
 
     // web server port
