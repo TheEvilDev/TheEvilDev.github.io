@@ -1,5 +1,5 @@
 angular.module("MyApp", ['ngRoute'])
-		.config(function($routeProvider, $locationProvider) {
+		.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 		  $routeProvider
 		   .when('/About', {
 		    controller: 'AboutController'
@@ -10,18 +10,18 @@ angular.module("MyApp", ['ngRoute'])
 
 		  // configure html5 to get links working on jsfiddle
 		  //$locationProvider.html5Mode(true);
-		})
-
-		.controller("MainController", function($scope, $route, $routeParams, $location) {
+		}])
+		.controller("MainController", ['$scope','$route','$routeParams', '$location', function($scope, $route, $routeParams, $location) {
 		     $scope.$route = $route;
 		     $scope.$location = $location;
 		     $scope.$routeParams = $routeParams;
-		 })
-
+		}])
 		.controller("AboutController", function($scope) {
 
-		});
-;/**
+		})
+		.controller('BlogController', ['$scope', '$routeParams', function($scope, $routeParams){
+
+		}]);;/**
  * boxlayout.js v1.0.0
  * http://www.codrops.com
  *
@@ -162,7 +162,7 @@ var Boxlayout = (function() {
 	return { init : init };
 
 })();;angular.module("MyApp")
-		.directive('box', function($location, $rootScope) {
+		.directive('box', ['$location', '$rootScope', function($location, $rootScope) {
 			return {
 	            restrict: 'E',
 	            templateUrl: 'boxtemplate',
@@ -193,4 +193,4 @@ var Boxlayout = (function() {
 	                });
 	            }
 	        };
-	    });
+	    }]);

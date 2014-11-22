@@ -1,5 +1,5 @@
 angular.module("MyApp")
-		.directive('box', function($location, $rootScope) {
+		.directive('box', ['$location', '$rootScope', function($location, $rootScope) {
 			return {
 	            restrict: 'E',
 	            templateUrl: 'boxtemplate',
@@ -30,4 +30,4 @@ angular.module("MyApp")
 	                });
 	            }
 	        };
-	    });
+	    }]);
