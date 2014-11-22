@@ -20,8 +20,10 @@ angular.module("MyApp", ['ngRoute'])
 
 		})
 		.controller('BlogController', ['$scope', '$routeParams', function($scope, $routeParams){
+  
+		}]);
 
-		}]);;/**
+/**
  * boxlayout.js v1.0.0
  * http://www.codrops.com
  *
@@ -161,7 +163,9 @@ var Boxlayout = (function() {
 
 	return { init : init };
 
-})();;angular.module("MyApp")
+})();
+
+angular.module("MyApp")
 		.directive('box', ['$location', '$rootScope', function($location, $rootScope) {
 			return {
 	            restrict: 'E',

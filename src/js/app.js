@@ -20,5 +20,5 @@ angular.module("MyApp", ['ngRoute'])
 
 		})
 		.controller('BlogController', ['$scope', '$routeParams', function($scope, $routeParams){
-
+  
 		}]);

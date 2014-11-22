@@ -6,7 +6,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
         options: {
-          separator: ';'
+          separator: '\n\n',
+
         },
         dist: {
           src: ['src/js/**/*.js'],
@@ -26,7 +27,9 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        sourceMap: true,
+        mangle: true,
+        compress: true
       },
       dist: {
         files: {
@@ -66,15 +69,24 @@ module.exports = function(grunt) {
           src: '<%= app %>',
           serve : true,
           port : 8000,
-          auto : true
+          auto : true,
+          watch : true
         }
       }
     },
     watch: {
-      files: ['<%= jshint.all.src %>', 'tests/**/*.js'],
+      files: ['<%= jshint.all.src %>', 'src/tests/**/*.js','src/css/**/*.css'],
       tasks: ['test'],
       options: {
         spawn: false,
+      }
+    },
+    concurrent: {
+      run: {
+          tasks: ['default','jekyll','watch'],
+          options: {
+              logConcurrentOutput: true
+          }
       }
     }
   });
@@ -84,8 +96,8 @@ module.exports = function(grunt) {
   });
 
   // grunt watch to apply changes as they happen and test them
-  grunt.registerTask('test', ['jshint','concat','uglify','karma:unit']);
+  grunt.registerTask('test', ['default','karma:unit']);
   grunt.registerTask('default', ['jshint', 'concat', 'uglify','cssmin']);
-  grunt.registerTask('run', ['default','jekyll']);
+  grunt.registerTask('run', ['concurrent:run']);
 
 };
