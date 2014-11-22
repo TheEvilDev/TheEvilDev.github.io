@@ -6,9 +6,10 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    csslint: {
-      src: ['<%= concat.css.src %>']
+    scsslint: {
+      allFiles: ['src/css/**/*.scss']
     },
+    clean: ["dist/js", "dist/css"],
     concat: {
         options: {
           separator: '\n\n',
@@ -16,17 +17,15 @@ module.exports = function(grunt) {
         dist: {
           src: ['src/js/**/*.js'],
           dest: 'dist/js/<%= pkg.name %>.js'
-        },
-        css: {
-          src: ['src/css/**/*.css'],
-          dest: 'dist/css/<%= pkg.name %>.css'
         }
     },
     sass: {
       dist: {
         files: [{
           expand: true,
+          cwd: 'src/',
           src: ['**/*.scss'],
+          dest: 'dist/',
           ext: '.css'
         }]
       }
@@ -35,7 +34,7 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          src: ['<%= concat.css.dest %>'],
+          src: ['dist/css/main.css'],
           ext: '.min.css'
         }]
       }
@@ -90,7 +89,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.all.src %>', 'src/tests/**/*.js','<%= concat.css.dest %>'],
+      files: ['<%= jshint.all.src %>', 'src/tests/**/*.js','src/css/**/*.scss'],
       tasks: ['test'],
       options: {
         spawn: false,
@@ -115,8 +114,8 @@ module.exports = function(grunt) {
   });
 
   // grunt watch to apply changes as they happen and test them
-  grunt.registerTask('lint', ['jshint','csslint']);
-  grunt.registerTask('minify', ['concat','uglify','sass:dist','concat:css','cssmin']);
+  grunt.registerTask('lint', ['jshint','scsslint']);
+  grunt.registerTask('minify', ['clean','concat','uglify','sass:dist','cssmin']);
   grunt.registerTask('test', ['karma:unit']);
   grunt.registerTask('run', ['launch','concurrent:run']);
   
