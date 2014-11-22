@@ -1,4 +1,4 @@
-body, html {
-  height: 100%; }
+.bl-main > section:nth-child(3).bl-expand {
+  background: #2c2c2c; }
 
 /*# sourceMappingURL=main.css.map */

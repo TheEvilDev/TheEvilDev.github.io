@@ -1,5 +1,3 @@
-var exec = require('child_process').exec;
-
 module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
@@ -21,13 +19,9 @@ module.exports = function(grunt) {
     },
     sass: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: 'src/',
-          src: ['**/*.scss'],
-          dest: 'dist/',
-          ext: '.css'
-        }]
+        files: {
+          'dist/css/main.css': 'src/css/main.scss'
+        }
       }
     },
     cssmin: {
@@ -90,7 +84,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['<%= jshint.all.src %>', 'src/tests/**/*.js','src/css/**/*.scss'],
-      tasks: ['test'],
+      tasks: ['clean','lint','minify','test'],
       options: {
         spawn: false,
       }
@@ -106,19 +100,20 @@ module.exports = function(grunt) {
   });
 
   grunt.event.on('watch', function(action, filepath) {
-    grunt.config('jshint.all.src', filepath);
-  });
-
-  grunt.registerTask('launch', 'Launches web browser', function(){
-    exec('open -a Chrome "http://localhost:8000"');
+    if(filepath.indexOf('.js') > 0){
+      grunt.config('jshint.all.src', filepath);
+    }
+    if(filepath.indexOf('.scss') > 0){
+      grunt.config('scsslint.allFiles', filepath);
+    }
   });
 
   // grunt watch to apply changes as they happen and test them
   grunt.registerTask('lint', ['jshint','scsslint']);
-  grunt.registerTask('minify', ['clean','concat','uglify','sass:dist','cssmin']);
+  grunt.registerTask('minify', ['concat','uglify','sass:dist','cssmin']);
   grunt.registerTask('test', ['karma:unit']);
-  grunt.registerTask('run', ['launch','concurrent:run']);
+  grunt.registerTask('run', ['concurrent:run']);
   
   // Default task runs everything
-  grunt.registerTask('default', ['lint','minify','test','run']);
+  grunt.registerTask('default', ['clean','lint','minify','test','run']);
 };
