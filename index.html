@@ -14,6 +14,7 @@
     <link href="dist/lib/bootstrap.min.css" rel="stylesheet" />
     <link href="dist/lib/component.css" rel="stylesheet" />
     <link href="dist/lib/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/sunburst.min.css" rel="stylesheet" />
     <link href="dist/css/main.min.css" rel="stylesheet" />
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -119,6 +120,13 @@
 			<div class="bl-content" ng-transclude></div>
 			<span class="bl-icon bl-icon-close" ng-click="collapse()"></span>
 		</section>
+	</script>
+
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/fsharp.min.js"></script>
+	
+	<script>
+	hljs.initHighlightingOnLoad();
 	</script>
 </body>
 </html>
