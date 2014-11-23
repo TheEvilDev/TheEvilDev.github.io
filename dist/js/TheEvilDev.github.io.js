@@ -4,7 +4,7 @@ angular.module("MyApp", ['ngRoute'])
 		   .when('/About', {
 		    controller: 'AboutController'
 		  })
-		  .when('/Blog', {
+		  .when('/Blog/:id', {
 		    controller: 'BlogController'
 		  });
 

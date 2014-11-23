@@ -77,8 +77,7 @@ module.exports = function(grunt) {
           src: '<%= app %>',
           serve : true,
           port : 8000,
-          auto : true,
-          watch : true
+          auto : true
         }
       }
     },

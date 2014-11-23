@@ -15,11 +15,9 @@
     <link href="dist/lib/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="dist/css/main.min.css" rel="stylesheet" />
 
-
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
 
-    
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -51,7 +49,7 @@
 				<div class="span12">
 					<h2>Blog Posts</h2>
 					{% for post in site.posts %}
-						<article>
+						<article id="{{ post.title }}">
 							<h3>{{ post.title }}</h3>
 							{{ post.content }}
 						</article>
@@ -68,7 +66,7 @@
 					<p>I am available for freelance jobs, presentations, and technical debates. (No spam please).
 					Please contact me and send me your questions and inquiries.</p>						
 				<p>
-					<p>mitch@evildev.net | Seattle, WA</p>
+					<p>mitch@evildev.net | Seattle, WAa</p>
 				</p>
 
 				<p>
@@ -81,7 +79,6 @@
 					<a href="skype:theevildev?chat" class="social-network skype"></a>
 					<a href="http://www.linkedin.com/in/evildev" class="social-network linkedin"></a>
 				</p>
-				
 			</div>
 		</box>
 	</div><!-- /bl-main -->
@@ -104,6 +101,12 @@
 
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="dist/js/TheEvilDev.github.io.min.js"></script>
+	<script type="text/javascript">
+		angular.module('MyApp')
+		       .run(function($rootScope){
+
+		       });
+	</script>
 
 	<script id="boxtemplate" type="text/ng-template">
 		<section ng-class='{ "bl-expand": expanded, "bl-expand-top": expanded }'>

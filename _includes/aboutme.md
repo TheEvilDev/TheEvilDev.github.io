@@ -13,7 +13,7 @@ Pragmatic thinker, agile enthusiast, and an undying passion for software develop
 I am a proud father of two amazing sons, and a dedicated husband.
 
 ## Experience
-**Web Development Engineer** \| Amazon.com
+**Web Development Engineer** \| Amazon.com  
 _September 2014 - Present_ \| Seattle, USA
 
 **Development Team Lead** \| Coldwin Software Inc.  

@@ -1,4 +1,11 @@
 .bl-main > section:nth-child(3).bl-expand {
-  background: #2c2c2c; }
+  background: #E6E6E6;
+  color: black; }
+
+.blog .bl-content {
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px; }
 
 /*# sourceMappingURL=main.css.map */
