@@ -9,9 +9,10 @@
     <meta name="description" content="About me, my works, and my thoughts">
     <meta name="author" content="Mitchell Lee">
 
-    <!-- Le styles -->
+    <!-- Stylesheet -->
+    <!--<link href='http://fonts.googleapis.com/css?family=PT+Mono|Oswald:300|Old+Standard+TT:400,700,400italic' rel='stylesheet' type='text/css'>-->
     <link href="dist/lib/bootstrap.min.css" rel="stylesheet" />
-    <link href="dist/lib/component.min.css" rel="stylesheet" />
+    <link href="dist/lib/component.css" rel="stylesheet" />
     <link href="dist/lib/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="dist/css/main.min.css" rel="stylesheet" />
 
@@ -50,7 +51,9 @@
 					<h2>Blog Posts</h2>
 					{% for post in site.posts %}
 						<article id="{{ post.title }}">
-							<h3>{{ post.title }}</h3>
+							<header>
+								<h1>{{ post.title }}</h1>
+							</header>
 							{{ post.content }}
 						</article>
 						<hr>
@@ -104,7 +107,7 @@
 	<script type="text/javascript">
 		angular.module('MyApp')
 		       .run(function($rootScope){
-
+		       		$rootScope
 		       });
 	</script>
 

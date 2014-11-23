@@ -36,7 +36,6 @@ body {
     font-weight: 300;
 }
 a {
-    color: #f0f0f0;
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 2px;
@@ -167,17 +166,7 @@ a:hover {
     overflow: hidden;
     overflow-y: auto;
 }
-.bl-content p {
-    margin: 0 auto;
-    padding-bottom: 15px;
-    font-size: 1.7em;
-    line-height: 1.8;
-}
-.bl-content h2 {
-    font-size: 3em;
-    font-weight: 300;
-    margin: 0 0 20px;
-}
+
 .bl-content article {
     padding: 20px 40px 20px 0;
 }
@@ -188,9 +177,6 @@ a:hover {
     margin: 0 0 10px;
     padding-top: 20px;
     font-size: 1.4em;
-}
-.bl-content article a {
-    color: rgba(0, 0, 0, .2);
 }
 .bl-content>ul {
     list-style: none;
