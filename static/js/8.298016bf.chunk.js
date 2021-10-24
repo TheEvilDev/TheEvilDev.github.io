@@ -1,0 +1,2 @@
+(this["webpackJsonp@evildev/website"]=this["webpackJsonp@evildev/website"]||[]).push([[8],{50:function(e,t,i){"use strict";i.r(t),t.default=i.p+"static/media/aboutme.a9f2d89e.mdx"}}]);
+//# sourceMappingURL=8.298016bf.chunk.js.map
